@@ -10,11 +10,10 @@ const https = require("https");
 const app = express();
 
 
-
-app.set('view engine', 'ejs');
-
+app.set("view engine", "ejs");
+app.set("views", __dirname + "\\views")
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
+app.use(express.static(__dirname + "\\public"));
 
 app.get("/", function(req, res){
   res.render("home");
@@ -28,14 +27,22 @@ app.get("/register", function(req, res){
   res.render("register");
 });
 
-app.post("/", function(req, res){
+app.post("/", async function(req, res){
   const object = {
     level : req.body.site,
     link : req.body.link
   }
   console.log(object);
+  console.log("http://127.0.0.1:5000/data/" + encodeURIComponent(object.link));
+  result = await fetch("http://127.0.0.1:5000/data/" + encodeURIComponent(object.link), {
+    method: "GET"
+  }).then(res => res.json()).then(data => data);
+  
+  console.log(result);
+  
   res.render("view",{
-    variable : object
+    variable : object,
+    data: result
   })
 });
 

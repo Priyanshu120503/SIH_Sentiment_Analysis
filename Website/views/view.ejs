@@ -1,8 +1,28 @@
+<head>
+       <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
+</head>
 <body>
 
 <h1>Some Page</h1>
 <h1>Social Media Platform Selected : <%= variable.level %></h1>
 <h1>Link : <%= variable.link %></h1>
+<div id="sentiment-pie">
+</div>
+<script>
+       let analysis_data = <%- JSON.stringify(data) %>;
+       var data = [{
+              values: Object.values(analysis_data),
+              labels: Object.keys(analysis_data),
+              type: 'pie'
+       }];
 
+       var layout = {
+       height: 400,
+       width: 500
+       };
+
+       Plotly.newPlot('sentiment-pie', data, layout);
+</script>
 </body>
+
 
