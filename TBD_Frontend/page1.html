@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <script src = "script.js"></script>
+    <title>SS</title>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Sentinent Sentinels</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <p>Projects(Heading)</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dropdown</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Dropdown 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Dropdown 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Dropdown 3</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="pricing.html">Prices</a>
+                    <!-- <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Page 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
+                        </li>
+                    </ul> -->
+                </li>
+                <li>
+                    <a href="#">No Dropdown</a>
+                </li>
+                <li>
+                    <a href="#">No Dropdown</a>
+                </li>
+            </ul>
+
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a href="" class = "download">link</a>
+                </li>
+                <li>
+                    <a href="" class="article">diff style of link</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: #421400">  -->
+                <nav class="navbar navbar-expand-lg" style="background: #421400"> 
+
+                <!-- <hi>bg-light</hi> -->
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- search bar -->
+                    <div class='search'>
+                        <input class='search-input' type='text' name='' placeholder='Search...'>
+                        <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
+                      </div>
+                    <!-- <p>yt4cbvrywbctu6wbcuyuywtc</p> -->
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:#FFEAE1">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">New Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Page Link</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">New Page Link</a>
+                            </li>
+                            <button onclick="myFunction()" id="darkMode">Toggle dark mode</button>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            
+            <h2>Do we need a heading??</h2>
+            <h4>Or a sub heading?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, praesentium molestiae neque ipsam earum doloremque laborum. Dicta hic officiis quibusdam ut quos, error perspiciatis aliquid unde quam modi itaque eaque.</p>
+
+            <div class="line"></div>
+            <h2>There should be a graph/chart ig</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Perferendis nisi totam, quibusdam voluptatibus dolores sit dicta assumenda alias architecto doloremque quae tempore sint. Unde est possimus in fugit, accusantium illo.</p>
+            <div class="line"></div>
+
+            <h2>Hiiiiiiiiiiiiiiiiiiiiiiiiiiii</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum assumenda non blanditiis eveniet voluptates iste id unde, adipisci quo praesentium deleniti recusandae voluptas voluptatibus sunt dolorem reprehenderit modi error necessitatibus?</p>
+            <div class="line"></div>
+
+            <h3>♥️💜♥️💕💙💗💔💞💓💛🖤💚❣️🧡💝🤍💟🤎🫶❤︎</h3>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni provident, enim vero saepe ipsa, at facere aliquid voluptate distinctio animi libero praesentium officiis? Maxime libero quod at deserunt labore eos.</p>
+        </div>
+    </div>
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $(this).toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
