@@ -39,7 +39,7 @@
 
         <ul id="main-menu" class="hidden lg:flex">
             <li class="lg:hidden">
-                <a href="loginsignup.html" class="text-primary">Login</a>
+                <a href="login" class="text-primary">Login</a>
             </li>
             <li class="lg:hidden">
                 <a href="/register">Register</a>
@@ -49,8 +49,8 @@
     
 <!-- laptop browser -->
     <div class="space-x-2 items-center hidden lg:flex flex-none">
-        <a href="loginsignup.html" class="secondary-button">Login</a>
-        <a href="loginsignup.html" class="primary-button-sm">Sign up for free</a>
+        <a href="login" class="secondary-button">Login</a>
+        <a href="login" class="primary-button-sm">Sign up for free</a>
     </div>
 </header>
 
@@ -69,54 +69,19 @@
         <button class="tablinks"; style="color: white;" onclick="openCity(event, 'level')">Platform Selection</button>
     </div>
     
-    <form action="/" method="post" >
+    <form action="/data" method="post" >
         <div id="level" class="tabcontent">
-            <!-- <h3>Select a Platform</h3>
-            <div class = "form-group">
-                <select name="DBMS" id="edu" name="edu">
-                    <option selected disabled>Select Platform</option>
-                    <option value="Youtube">Youtube</option>
-                    <option value="Instagram">Instagram</option>
-                    <option value="Yelp">Yelp</option>
-                </select>
-            </div> -->
             <div class = "form-group">
                 <label style="color: white;">Link</label>
                 <input type="text" name="link" class="form-control" autocomplete="off">
             </div>
             <div class = "form-group">
-                <!-- <label>Social Media</label> -->
                 <button type = "submit" value="Youtube" name="site" class="btn btn-primary">Youtube</button>
-                <button type = "submit" value="Instagram" name="site" class="btn btn-primary">Instgram</button>
+                <button type = "submit" value="Instagram" name="site" class="btn btn-primary">Instagram</button>
                 <button type = "submit" value="Yelp" name="site" class="btn btn-primary">Yelp</button>
             </div>
-            <!-- <button type = "submit" class="btn btn-primary">Submit</button> -->
         </div>
     </form>
-    <!-- <script>
-        // let dropdownList = document.getElementById('edu');
-        // dropdownList.onchange = (ev) =>{
-        //   let selecetedIndex = dropdownList.selectedIndex;
-        //   console.log("Selected index is: " + selecetedIndex);
-        //   let selectedOption = dropdownList.options[selecetedIndex];
-        //   console.log("Selected option is: " + selectedOption.outerHTML);
-        //   console.log("Selected value is: " + selectedOption.value);
-        //   console.log("Selected text is: " + selectedOption.text);
-        async function handleSubmit(){
-            const siteName = document.getElementById('edu').value;
-            const linkName = document.getElementById('link').value;
-            const object = {
-                site : siteName,
-                link : linkName
-            }
-            console.log(object);
-            await fetch("/", {
-                method:"POST",
-                body : JSON.stringify(object)
-            })
-        }
-        
-      </script> -->
     <script>
         function openCity(evt, cityName) 
         {
@@ -168,7 +133,7 @@
                         <h3>Analyze sentiments</h3>
                         <p>
                             Use our advanced sentiment analysis to segment the commennts into positive negative and neutral,
-                             so you don't have to do it yourself.
+                            so you don't have to do it yourself.
                         </p>
                     </div>
                 </li>
@@ -183,7 +148,7 @@
                 </li>
             </ul>
             <div class="md:pt-7">
-                <a href="loginsignup.html" class="primary-button">Sign up for free</a>
+                <a href="login" class="primary-button">Sign up for free</a>
             </div>
         </div>
     </div>
@@ -240,7 +205,7 @@
                 </li>
             </ul>
             <div class="md:pt-7">
-                <a href="loginsignup.html" class="primary-button">Sign up free</a>
+                <a href="login" class="primary-button">Sign up free</a>
             </div>
         </div>
     </div>
@@ -320,7 +285,7 @@
                 </li>
             </ul>
             <div class="md:pt-7">
-                <a href="loginsignup.html" class="primary-button">Sign up free</a>
+                <a href="login" class="primary-button">Sign up free</a>
             </div>
         </div>
     </div>
