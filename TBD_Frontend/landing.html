@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sentiment Sentinels</title>
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Sentiment Sentinels">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Sentiment Sentinels - Know what people say about your brand">
+
+    <link rel="icon" href="favicon.ico">
+    <!-- no site links in search box: -->
+    <meta name="google" content="nositelinkssearchbox">
+    <link rel="stylesheet" href="styles.min.css">
+</head>
+
+<body>
+
+<header class="w-full px-4 lg:px-10 py-4 lg:py-8 flex space-x-2 justify-between items-center">
+    <!-- svg, cuz they are responsive and have smaller file sizes -->
+    <div class="w-[210px]">
+        <img src="fonts/SSlogo.svg" alt="Sentiment Sentinels" width="150" height="30">
+    </div>
+    <nav>
+        <!-- 3 lines for main menu -->
+        <button id="mobile-menu-toggle" data-collapse-toggle="main-menu" type="button" class="inline-flex justify-center items-center text-gray-400 rounded-lg lg:hidden hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-primary" aria-controls="main-menu" aria-expanded="false">
+            <span class="sr-only">Main Menu</span>
+            <svg class="w-6 h-6" aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5 21.2507H25" stroke="black" stroke-width="1.5"></path>
+                <path d="M5 15H25" stroke="black" stroke-width="1.5"></path>
+                <path d="M5 8.74927H25" stroke="black" stroke-width="1.5"></path>
+            </svg>
+        </button>
+
+        <ul id="main-menu" class="hidden lg:flex">
+            <li class="lg:hidden">
+                <a href="loginsignup.html" class="text-primary">Login</a>
+            </li>
+            <li class="lg:hidden">
+                <a href="loginsignup.html">Sign up for free</a>
+            </li> 
+        </ul>
+    </nav>
+<!-- laptop browser -->
+    <div class="space-x-2 items-center hidden lg:flex flex-none">
+        <a href="loginsignup.html" class="secondary-button">Login</a>
+        <a href="loginsignup.html" class="primary-button-sm">Sign up for free</a>
+    </div>
+</header>
+
+<div class="content-section justify-center text-center pt-7">
+    <div class="space-y-5">
+        <h1 class="tracking-wide font-bold font-heading text-2xs uppercase flex items-center justify-center space-x-2">
+            <span>Spending too much time figuring out what people think of your brand?<br>Don't worry, we have your back</span>
+        </h1>
+        <h2 class="content-heading cd-headline slide">
+            <span class="cd-words-wrapper"><b class="is-visible">Know what people <br>say about your brand.</b><b>Analyze your<br>market.</b><b>Get all reviews  <br>at one place</b></span>
+        </h2>
+        <a href="loginsignup.html" class="primary-button">Sign up for free</a>
+    </div>
+    <div id="main-container">
+        <div id="main">
+            <video muted="" autoplay="" playsinline="" class="lazy" width="80%" height="600">
+                <source data-src="machine and human.mp4" type="video/mp4">
+            </video>
+        </div>
+        <img src="fonts/SSleftToright.svg" alt="SS" width="124" height="124" class="absolute hidden sm:block top-24 left-4">
+        <img src="fonts/SSrightToleft.svg" alt="SS" width="124" height="124" class="absolute hidden sm:block -right-12 -bottom-4 z-40">
+    </div>
+</div>
+
+<div class="content-section content-columns pb-20 pt-20 lg:pb-52 lg:pt-28">
+    <div class="flex" data-sal-duration="500" data-sal="slide-up">
+        <div class="flex flex-col space-y-7 max-w-md">
+            <h2 class="content-heading">Never miss <br>a comment.</h2>
+            <p class="content-paragraph">
+                Sentiment Sentinels offers complete access to all your online mentions.
+                <!-- from a variety of different sites Be it blogs or social media, you should know what is being said about you! -->
+            </p>
+            <ul class="content-list">
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/eye.svg" alt="Eye icon" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Multiple sources</h3>
+                        <p>
+                            Be it blogs or social media, you deserve know what is being said about you in real-time!
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/zap.svg" alt="Zap icon" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Analyze sentiments</h3>
+                        <p>
+                            Use our advanced sentiment analysis to segment the commennts into positive negative and neutral,
+                             so you don't have to do it yourself.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/bell.svg" alt="bells" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Get Notified</h3>
+                        <p>We will let you know when someone mentions you through your email, but only if you want us to.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="md:pt-7">
+                <a href="loginsignup.html" class="primary-button">Sign up for free</a>
+            </div>
+        </div>
+    </div>
+    <div class="w-full md:max-w-[50%] relative" data-sal-duration="500" data-sal="slide-left">
+        <div class="w-full md:max-w-[50%] relative" data-sal-duration="500" data-sal="slide-left">
+            <img src="fonts/SSvisualize.svg" alt="pic" class="w-full relative" loading="lazy" width="640" height="720">
+        </div>
+    </div>
+</div>
+
+<div class="content-section content-columns content-columns-reversed pb-20 lg:pb-52">
+    <div class="w-full md:max-w-[50%]" data-sal-duration="500" data-sal="slide-right">
+        <div class="w-full md:max-w-[50%] relative" data-sal-duration="500" data-sal="slide-left">
+            <img src="fonts/SSvisualize.svg" alt="pic" class="w-full relative" loading="lazy" width="640" height="720">
+        </div>
+    </div>
+    <div class="flex" data-sal-duration="500" data-sal="slide-up">
+        <div class="flex flex-col space-y-7 max-w-md">
+            <h2 class="content-heading">Get your data, Visualized.</h2>
+            <p class="content-paragraph">
+                Measure brand awareness and presence.
+            </p>
+            <ul class="content-list">
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/bars.svg" alt="bar graph" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Charts and graphs</h3>
+                        <p>
+                            Evaluate your target.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/ruler.svg" alt="Ruler" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Measure awareness</h3>
+                        <p>
+                            Identify the reach and importance of mentions.
+                        </p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/clipboard.svg" alt="Clipboard icon" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Create Reports</h3>
+                        <p>No need to manually keep track of things, let us do that for you.</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="md:pt-7">
+                <a href="loginsignup.html" class="primary-button">Sign up free</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section content-columns pb-20 lg:pb-52">
+    <div class="flex" data-sal-duration="500" data-sal="slide-up">
+        <div class="flex flex-col space-y-7 max-w-md">
+            <h2 class="content-heading">But Why<br>Sentiment Sentinels</h2>
+            <p class="content-paragraph">
+                "I have heard of sentiment analysis, but why should i use your site?"
+                <br>Still confused? Let me show you why each feature is so useful
+            </p>
+            <ul class="content-list">
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 1" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Save time</h3>
+                        <p>Time is money. Let the machines do the hard work of collecting comments from a wide variety of sources.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 2" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Get comments segmented into positive, negative and neutral</h3>
+                        <p>Can't keep up with the new slangs? Let us help you divide the comments, so you can focus on what is important</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 3" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Visualize Data</h3>
+                        <p>Use our analysis tools to measure and compare your reach on different platforms. s</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 4" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>"But I can't stay on this website all the time to see new comments"</h3>
+                        <p>We understand, which is why we can send you a notification whenever you have a new comment.<br>This will help you keep up with your target audience</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 5" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Generate Reports and share them</h3>
+                        <p>Work smart not hard. We will keep track of all your me tions and comments, so you don't have to.<br>We can then generate a downloadable report for you and your company.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 6" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>Easy to use</h3>
+                        <p>This site can be used by anyone, and no business or coding backgroung is required.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="content-list-icon">
+                        <img src="fonts/arrow.svg" alt="point 7" loading="lazy">
+                    </div>
+                    <div class="content-list-text">
+                        <h3>All in one</h3>
+                        <p>With so many exciting features, this is your one stop destination to measure and analyse your brand</p>
+                    </div>
+                </li>
+            </ul>
+            <div class="md:pt-7">
+                <a href="loginsignup.html" class="primary-button">Sign up free</a>
+            </div>
+        </div>
+    </div>
+    <div class="w-full md:max-w-[50%] relative" data-sal-duration="500" data-sal="slide-left">
+        <img src="fonts/SSrightToleft.svg" alt="Dots" width="124" height="124" loading="lazy" class="absolute bottom-44 -left-14 scale-[0.6] lg:scale-100">
+        <img src="fonts/SSvisualize.svg" alt="pic" class="w-full relative" loading="lazy" width="640" height="720">
+    </div>
+</div>
+
+<div class="bg-dark w-full mb-20 md:mb-28 py-16 lg:py-28">
+    <div class="flex flex-col space-y-12 content-section text-center items-center">
+        <h2 class="content-heading text-white !text-2xl md:!text-3xl-condensed" data-sal-duration="500" data-sal="slide-up">
+            Monitor the entire internet at once
+        </h2>
+        <div class="max-w-2xl grid gap-14 grid-cols-3 grid-rows-5 sm:grid-cols-5 sm:grid-rows-3 items-end px-4" data-sal-duration="500" data-sal="zoom-in">
+            <div class="source">
+                <img src="fonts/twitter.svg" alt="Twitter" loading="lazy" width="24" height="19">
+                <p>Twitter</p>
+            </div>
+            <div class="source">
+                <img src="fonts/fb.svg" alt="Facebook" loading="lazy" width="24" height="24">
+                <p>Facebook</p>
+            </div>
+            <div class="source">
+                <img src="fonts/insta.svg" alt="Instagram" loading="lazy" width="24" height="23">
+                <p>Instagram</p>
+            </div>
+            <div class="source">
+                <img src="fonts/youtube.svg" alt="Youtube" loading="lazy" width="24" height="24">
+                <p>Youtube</p>
+            </div>
+            <div class="source">
+                <img src="fonts/spotify.svg" alt="Spotify" loading="lazy" width="24" height="23">
+                <p>Spotify</p>
+            </div>
+            <div class="source">
+                <img src="fonts/newspaper.svg" alt="News" loading="lazy" width="24" height="23">
+                <p>News</p>
+            </div>
+            <div class="source">
+                <img src="fonts/linkedin.svg" alt="Linkedin" loading="lazy" width="24" height="23">
+                <p>Linkedin</p>
+            </div>
+            <div class="source">
+                <img src="fonts/bicon.svg" alt="Blogs" loading="lazy" width="24" height="26">
+                <p>Blogs</p>
+            </div>
+            <div class="source">
+                <img src="fonts/forums.svg" alt="Forums" loading="lazy" width="24" height="23">
+                <p>Forums</p>
+            </div>
+            <div class="source">
+                <img src="fonts/reviews.svg" alt="Reviews" loading="lazy" width="24" height="23">
+                <p>Reviews</p>
+            </div>
+            <div class="source">
+                <img src="fonts/reddit.svg" alt="Reddit" loading="lazy" width="24" height="23">
+                <p>Reddit</p>
+            </div>
+            <div class="source">
+                <img src="fonts/telegram.svg" alt="Telegram" loading="lazy" width="24" height="23">
+                <p>Telegram</p>
+            </div>
+            <div class="source">
+                <img src="fonts/tripadvisor.svg" alt="TripAdvisor" loading="lazy" width="24" height="22">
+                <p>TripAdvisor</p>
+            </div>
+            <div class="source">
+                <img src="fonts/appstore.svg" alt="AppStore" loading="lazy" width="24" height="23">
+                <p>AppStore</p>
+            </div>
+            <div class="source">
+                <img src="fonts/tiktok.svg" alt="TikTok" loading="lazy" width="24" height="27">
+                <p>TikTok</p>
+            </div>
+        </div>
+        <div class="text-lighter text-xs-relaxed font-medium">
+            &amp; many more
+        </div>
+    </div>
+</div>
+
+<div class="bg-lightest py-8 md:py-28 mb-20 lg:mb-28 w-full">
+    <div class="flex flex-col space-y-7 content-section text-center items-center">
+        <h3 class="tracking-wide font-bold font-heading text-2xs" data-sal-duration="500" data-sal="slide-up">
+            Sounds Complicated?
+        </h3>
+        <div class="flex flex-col space-y-5">
+            <h2 class="content-heading" data-sal-duration="500" data-sal="slide-up">
+                Here is a demo video
+            </h2>
+            <p class="content-paragraph" data-sal-duration="500" data-sal="slide-up">
+                /*Demo video here*/
+            </p>
+            <div class="relative" id="video" data-sal-duration="500" data-sal="zoom-in">
+                <img src="images/ videopic.png" alt="Video guide" loading="lazy" class="w-full mx-auto max-w-5xl" width="1024" height="575">
+                <button type="button" id="play">
+                    <!-- <img class="w-11 h-11 md:w-28 md:h-28" src="fonts/play.svg" alt="Play" loading="lazy"> -->
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark pt-16 lg:pt-16">
+    <div class="content-section" data-sal-duration="500" data-sal="slide-up">
+        <div class="flex flex-col md:flex-row space-y-7 md:space-y-0 md:space-x-4 md:items-start pb-5 lg:pb-5">
+            <div class="w-full text-white">
+                <h4>Contact</h4>
+                <img src="fonts/SSlogo.svg" alt="Sentiment Sentinels Logo" loading="lazy" class="w-20 mb-3 text-white" width="70" height="15">
+                <a href="mailto:emailid.com" class="text-sm text-white underline">Help</a>
+                <p class="text-sm text-footer-dark pt-9">
+                    Sentiment Sentinels <br>
+                    Mumbai <br>
+                    India<br>
+                </p>
+            </div>
+            <div class="w-full text-white">
+                <h4>Product</h4>
+                <ul id="menu-footer-menu-left" class="lists">
+                    <li><a href="#">Pricing</a></li>
+                    <li><a href="#">Updates</a></li>
+                    <li>
+                        <a href="#">
+                            Partner Program
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="">
+                            Mobile App
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-full text-white">
+                <h4>Clients</h4>
+            </div>
+            <div class="w-full text-white">
+                <h4>Resources</h4>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script defer="" src="js/scripts.min.js"></script>
+
+</body>
+</html>
