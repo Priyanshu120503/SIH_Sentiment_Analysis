@@ -39,12 +39,6 @@ def get_youtube_comments(link, count):
         maxResults=count)
     response = request.execute()
 
-    comments = []
-
-    # for item in response['items']:
-    #     comment = item['snippet']['topLevelComment']['snippet']
-    #     comments.append((comment['textDisplay'], comment['likeCount']))
-
     return response
 
 
@@ -127,9 +121,6 @@ def scrape_thread(url: str) -> dict:
 
 def get_threads_replies(link):
     scraped = scrape_thread(link)
-    # replies = []
-    # for i in scraped["replies"]:
-    #     replies.append((i["text"],i['like_count']))
     return scraped['replies']
 
 
@@ -145,7 +136,6 @@ def get_yelp_reviews(link):
             reviews.append((results[i].text,int(usefulness[::3][i].text[1:])))
         except:
             pass
-    print(reviews)
     return reviews
 
 
@@ -155,10 +145,9 @@ def get_rating(row):
     return int(torch.argmax(result.logits)) + 1
 
 
-def get_predictions(site, link):
+def get_predictions(link) -> pd.DataFrame:
     data = []
-
-    if site == 'yt':
+    if re.match(r"https://www.youtube.com*", link):
         resp = get_youtube_comments(link, 100)
         for i in resp['items']:
             temp = i['snippet']['topLevelComment']['snippet']
@@ -168,7 +157,7 @@ def get_predictions(site, link):
                 'likeCount': temp['likeCount'],
                 'publishedAt': temp['publishedAt']
             })
-    elif site == 'threads':
+    elif re.match(r"https://www.threads.net*", link):
         resp = get_threads_replies(link)
         for i in resp:
             data.append({
@@ -191,5 +180,5 @@ def get_predictions(site, link):
 tokenizer = AutoTokenizer.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
 model = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
 
-
-print(get_predictions('threads', 'https://www.threads.net/@zuck/post/CxWMc87galo'))
+if __name__ == '__main__':
+    print(get_predictions('https://www.threads.net/@zuck/post/CxWMc87galo'))
