@@ -76,7 +76,7 @@ def parse_thread(data: Dict) -> Dict:
     )
     result["videos"] = list(set(result["videos"] or []))
     if result["reply_count"]:
-        result["reply_count"] = int(result["reply_count"].split(" ")[0])
+        result["reply_count"] = int(re.sub(r"[^\d]", '', result["reply_count"].split(" ")[0]))
     result[
         "url"
     ] = f"https://www.threads.net/@{result['authorDisplayName']}/post/{result['code']}"
@@ -219,4 +219,5 @@ if __name__ == '__main__':
     # p_df = get_predictions('https://www.youtube.com/watch?v=NuEgjAMfdIY')
     # get_word_cloud(p_df)
     print(DEVELOPER_KEY_YT)
+    # https://www.threads.net/@mrbeast/post/CuXrpemRV3m
 
