@@ -1,2 +1,6 @@
 /Website/node_modules
 /Website/package-lock.json
+/Flask_API/__pycache__/
+/Website/views/smiley.html
+/Website/loading.html
+Flask_API/constants.py

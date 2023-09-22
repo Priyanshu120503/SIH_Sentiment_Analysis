@@ -1,13 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
        <script src="https://cdn.plot.ly/plotly-2.26.0.min.js" charset="utf-8"></script>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
 
 <h1>Some Page</h1>
 <h1>Social Media Platform Selected : <%= variable.level %></h1>
 <h1>Link : <%= variable.link %></h1>
-<div id="sentiment-pie">
+
+<div id="sentiment-pie"></div>
+
+<div>
+       <svg width="380" height="400">
+              <!-- Head -->
+              <circle cx="200" cy="200" r="150" fill="#FFDD67" />
+           
+              <!-- Eyes -->
+              <circle cx="130" cy="160" r="20" fill="black" />
+              <circle cx="270" cy="160" r="20" fill="black" />
+       
+              <path d="M 200 290
+                            A 150 100, 0, 0, 1, 130 260"
+                            id="le" fill="green" fill-opacity="0" stroke-width="5" stroke="black"/>
+              
+              <path d="M 200 290
+                            A 150 100, 0, 0, 0, 270 260"
+                     fill="green" id="ri" fill-opacity="0" stroke-width="5" stroke="black"/>
+       </svg>
+     
+       <svg width="380" height="400">
+              <!-- Head -->
+              <circle cx="200" cy="200" r="150" fill="#f23d43" />
+          
+              <!-- Eyes -->
+              <circle cx="130" cy="160" r="20" fill="black" />
+              <circle cx="270" cy="160" r="20" fill="black" />
+     
+              <path d="M 200 260
+                            A 150 100, 0, 0, 0, 130 290" 
+                            id="leS" fill-opacity="0" stroke-width="5" stroke="black"/>
+              
+              <path d="M 200 260
+                            A 150 100, 0, 0, 1, 270 290" 
+                            id="riS" fill-opacity="0" stroke-width="5" stroke="black"/>
+       </svg>
+     
+        <svg width="380" height="400">
+              <!-- Head -->
+              <circle cx="200" cy="200" r="150" fill="#3d9df2" />
+              
+              <!-- Eyes -->
+              <circle cx="130" cy="160" r="20" fill="black" />
+              <circle cx="270" cy="160" r="20" fill="black" />
+              
+              <path d="M 200 270
+                            H 130" 
+                            id="leF" fill-opacity="0" stroke-width="5" stroke="black"/>
+              
+              <path d="M 200 270
+                            H 270" 
+                     id="riF" fill-opacity="0" stroke-width="5" stroke="black"/>
+       </svg>    
 </div>
+<p id="intersectionTarget"></p>
+
+<img src="/images/wordc.png" width="900"/>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script>
        let analysis_data = <%- JSON.stringify(data) %>;
        var data = [{
@@ -17,12 +82,164 @@
        }];
 
        var layout = {
-       height: 400,
-       width: 500
+       height: 500,
+       width: 700
        };
 
        Plotly.newPlot('sentiment-pie', data, layout);
 </script>
+<script>
+       // Animating SVGs
+       
+       let sum = 0;
+       Object.values(analysis_data).forEach(d => {sum += d;});
+
+       let observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                     if(entry.isIntersecting) {
+                            let positive = Number(analysis_data['positive'] * 100/ sum);
+                            let negative = Number(analysis_data['negative'] * 100/ sum);
+                            animateSmile(positive);
+                            animateSad(negative);
+                            animateFlat(100 - positive - negative);
+                     }
+              });
+       });
+
+       observer.observe(document.getElementById("intersectionTarget"));
+
+       // ----- Smiley -----------------
+       let l = document.getElementById("le");
+       let r = document.getElementById("ri");
+
+       let lSmileLength = l.getTotalLength();
+       console.log(lSmileLength);
+
+       l.style.strokeDasharray = lSmileLength;
+       l.style.strokeDashoffset = lSmileLength; // Set to half of smileLength to start from the center
+
+       r.style.strokeDasharray = lSmileLength;
+       r.style.strokeDashoffset = lSmileLength; // Set to half of 
+
+       // Define the animation duration (in milliseconds)
+       var animationDuration = 200; // Adjust this value as needed
+
+       // Calculate the step size for animation
+       var stepSize = lSmileLength / animationDuration;
+
+       // Track whether the animation is already running
+       var isAnimating = false;
+
+       function animateSmile(per) {
+           if (!isAnimating) {
+               isAnimating = true;
+
+               var leftDashOffset = lSmileLength; // Start from the center
+               var rightDashOffset = lSmileLength; // Start from the center
+
+               var animationInterval = setInterval(function() {
+               leftDashOffset -= stepSize;
+               rightDashOffset -= stepSize;
+
+               l.style.strokeDashoffset = leftDashOffset;
+               r.style.strokeDashoffset = rightDashOffset;
+
+               let limit = (100 - per) * lSmileLength / 100;
+               if (leftDashOffset <= limit || rightDashOffset <= limit) {
+                   clearInterval(animationInterval);
+                   isAnimating = false;
+               }
+               }, 16); // Using 16ms as a typical frame duration for smooth animation
+           }
+       }
+
+
+       // ----- Sad -----------------
+       let lS = document.getElementById("leS");
+       let rS = document.getElementById("riS");
+
+       let lSSmileLength = lS.getTotalLength();
+       console.log(lSSmileLength);
+
+       lS.style.strokeDasharray = lSSmileLength;
+       lS.style.strokeDashoffset = lSSmileLength; // Set to half of smileLength to start from the center
+
+       rS.style.strokeDasharray = lSSmileLength;
+       rS.style.strokeDashoffset = lSSmileLength; // Set to half of 
+
+       // Calculate the step size for animation
+       var stepSizeS = lSSmileLength / animationDuration;
+
+       // Track whether the animation is already running
+       var isAnimatingS = false;
+
+       function animateSad(per) {
+           if (!isAnimatingS) {
+               isAnimatingS = true;
+
+               var leftDashOffset = lSSmileLength; // Start from the center
+               var rightDashOffset = lSSmileLength; // Start from the center
+
+               var animationIntervalS = setInterval(function() {
+               leftDashOffset -= stepSizeS;
+               rightDashOffset -= stepSizeS;
+
+               lS.style.strokeDashoffset = leftDashOffset;
+               rS.style.strokeDashoffset = rightDashOffset;
+
+               let limit = (100 - per) * lSSmileLength / 100;
+               if (leftDashOffset <= limit || rightDashOffset <= limit) {
+                   clearInterval(animationIntervalS);
+                   isAnimatingS = false;
+               }
+               }, 16); // Using 16ms as a typical frame duration for smooth animation
+           }
+       }
+
+
+       // ----- Flat -----------------
+       let lF = document.getElementById("leF");
+       let rF = document.getElementById("riF");
+
+       let lFSmileLength = lF.getTotalLength();
+       console.log(lFSmileLength);
+
+       lF.style.strokeDasharray = lFSmileLength;
+       lF.style.strokeDashoffset = lFSmileLength; // Set to half of smileLength to start from the center
+
+       rF.style.strokeDasharray = lFSmileLength;
+       rF.style.strokeDashoffset = lFSmileLength; // Set to half of 
+
+       // Calculate the step size for animation
+       var stepSizeF = lFSmileLength / animationDuration;
+
+       // Track whether the animation is already running
+       var isAnimatingF = false;
+
+       function animateFlat(per) {
+           if (!isAnimatingF) {
+               isAnimatingF = true;
+
+               var leftDashOffset = lFSmileLength; // Start from the center
+               var rightDashOffset = lFSmileLength; // Start from the center
+
+               var animationIntervalF = setInterval(function() {
+               leftDashOffset -= stepSizeF;
+               rightDashOffset -= stepSizeF;
+
+               lF.style.strokeDashoffset = leftDashOffset;
+               rF.style.strokeDashoffset = rightDashOffset;
+
+               let limit = (100 - per) * lFSmileLength / 100;
+               if (leftDashOffset <= limit || rightDashOffset <= limit) {
+                   clearInterval(animationIntervalF);
+                   isAnimatingF = false;
+               }
+               }, 16); // Using 16ms as a typical frame duration for smooth animation
+           }
+       }
+</script>
 </body>
+</html>
 
 

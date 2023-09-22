@@ -3,14 +3,14 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-
+const path = require("path");
 
 const app = express();
 
 app.set("view engine", "ejs");
-app.set("views", __dirname + "\\views");
+app.set("views", path.join(__dirname,"views"));
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(__dirname + "\\public"));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", function (req, res) {
   res.render("home");
@@ -28,16 +28,24 @@ app.get("/login", function (req, res) {
   res.render("login");
 });
 
-// Make the route handler async
-app.post("/data", async function (req, res) {
+app.post("/loading", function(req, res) {
   const object = {
     level: req.body.site,
     link: req.body.link,
   };
+  res.render("loading", data=object);
+});
+
+// Make the route handler async
+app.get("/data/:level/:link", async function (req, res) {
+  const object = {
+    level: req.params.level,
+    link: req.params.link
+  };
 
   try {
     // Use 'await' inside the 'async' function
-    const response = await fetch("http://127.0.0.1:5000/data/" + encodeURIComponent(object.link), {
+    const response = await fetch("http://127.0.0.1:5000/data/" + encodeURIComponent(req.params.link), {
       method: "GET",
     });
 

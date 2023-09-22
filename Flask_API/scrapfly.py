@@ -16,9 +16,18 @@ import torch
 import re
 import emoji
 
+import numpy as np
+from PIL import Image
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+from prepare_text import clean
+from constants import DEVELOPER_KEY_YT
+import os
+
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = <Dev_Key>
+DEVELOPER_KEY = DEVELOPER_KEY_YT
 
 youtube = googleapiclient.discovery.build(api_service_name, api_version, developerKey=DEVELOPER_KEY)
 
@@ -148,7 +157,7 @@ def get_rating(row):
 def get_predictions(link) -> pd.DataFrame:
     data = []
     if re.match(r"https://www.youtube.com*", link):
-        resp = get_youtube_comments(link, 100)
+        resp = get_youtube_comments(link, 500)
         for i in resp['items']:
             temp = i['snippet']['topLevelComment']['snippet']
             data.append({
@@ -172,6 +181,32 @@ def get_predictions(link) -> pd.DataFrame:
     df['rating'] = df.apply(get_rating, axis=1)
     return df
 
+
+def make_word_cloud(text):
+    background_color = "#fff"
+    colormap = 'viridis_r'
+
+    width = 1200
+    height = 800
+
+    cleaned_text = clean(text)
+
+    wc = WordCloud(background_color=background_color, colormap=colormap, width=width, height=height).\
+        generate(cleaned_text)
+
+    wc.to_file("../Website/public/images/wordc.png")
+
+    # Uncomment to view image
+    # plt.axis("off")
+    # plt.figure()
+    # plt.imshow(wc, interpolation="bilinear")
+    # plt.show()
+
+
+def get_word_cloud(df: pd.DataFrame):
+    make_word_cloud(df['Comment'].sum())
+
+
 # print(get_threads_replies("https://www.threads.net/@zuck/post/CxWMc87galo"))
 # resp, comm = get_youtube_comments("https://www.youtube.com/watch?v=v-Ymf_hTbUM", 30)
 # resp = get_threads_replies("https://www.threads.net/@zuck/post/CxWMc87galo")
@@ -181,4 +216,7 @@ tokenizer = AutoTokenizer.from_pretrained('nlptown/bert-base-multilingual-uncase
 model = AutoModelForSequenceClassification.from_pretrained('nlptown/bert-base-multilingual-uncased-sentiment')
 
 if __name__ == '__main__':
-    print(get_predictions('https://www.threads.net/@zuck/post/CxWMc87galo'))
+    # p_df = get_predictions('https://www.youtube.com/watch?v=NuEgjAMfdIY')
+    # get_word_cloud(p_df)
+    print(DEVELOPER_KEY_YT)
+
