@@ -137,14 +137,10 @@ def get_yelp_reviews(link):
     r = requests.get(link)
     soup = BeautifulSoup(r.text, 'html.parser')
     regex = re.compile('.*comment.*')
-    results = soup.find_all('p', {'class': regex})
-    usefulness = soup.find_all('span', class_='css-1lr1m88')
-    reviews = []
-    for i in range(len(usefulness)):
-        try:
-            reviews.append((results[i].text,int(usefulness[::3][i].text[1:])))
-        except:
-            pass
+    results = soup.find_all('p', {'class':regex})
+    reviews= []
+    for i in results:
+        reviews.append(i.text)
     return reviews
 
 
@@ -157,7 +153,7 @@ def get_rating(row):
 def get_predictions(link) -> pd.DataFrame:
     data = []
     if re.match(r"https://www.youtube.com*", link):
-        resp = get_youtube_comments(link, 500)
+        resp = get_youtube_comments(link, 100)
         for i in resp['items']:
             temp = i['snippet']['topLevelComment']['snippet']
             data.append({
