@@ -8,100 +8,195 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/styles.min.css">
+    <link rel="stylesheet" href="/css/pricing.css">
+    <meta name="google" content="nositelinkssearchbox">
     <title>SS</title>
 </head>
 
 <body>
-    <div class="wrapper">
-        <!-- Sidebar Holder -->
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Sentinent Sentinels</h3>
+    <nav class="navbar">
+        <div class="container">
+          <div class="navbar-header ">
+            <p style="color: white;" class="navbar-brand">Sentiment Sentinels</p>
+          </div>
+            <ul class="nav navbar-nav navbar-right">
+              <!-- 6 -->
+              <li id="home" class="menu"><a href="/">HOME</a></li>
+              <li id="contact" class="menu"><a href="/register">REGISTER</a></li>
+              <li id="about" class="menu"><a href="/login">LOG OUT</a></li>
+            </ul>
+        </div>
+      </nav>
+    
+    <div class="container">
+        <div class="content-section justify-center text-center pt-7">
+            <div class="space-y-5">
+                <h1 class="tracking-wide font-bold font-heading text-2xs uppercase flex items-center justify-center space-x-2">
+                    <span>Are you tired of spending excessive time monitoring your brand's online presence? <br>Experience a Trial Demo on your preferred social media platform</span>
+                </h1>
+                <h2 class="content-heading cd-headline slide">
+                    <span class="cd-words-wrapper"><b class="is-visible">Know what people <br>say about your brand.</b><b>Analyze your<br>market.</b><b>Get all reviews  <br>at one place</b></span>
+                </h2>
+                <button class="primary-button" onclick="openCity(event, 'level')">Select your Platform</button>
             </div>
-
-            <ul class="list-unstyled components">
-                <p>Projects(Heading)</p>
-                <li class="active">
-                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Dropdown</a>
-                    <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Dropdown 1</a>
-                        </li>
-                        <li>
-                            <a href="#">Dropdown 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Dropdown 3</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="pricing.html">Prices</a>
-                </li>
-                <li>
-                    <a href="#">No Dropdown</a>
-                </li>
-                <li>
-                    <a href="#">No Dropdown</a>
-                </li>
-            </ul>
-
-            <ul class="list-unstyled CTAs">
-                <li>
-                    <a href="" class = "download">link</a>
-                </li>
-                <li>
-                    <a href="" class="article">diff style of link</a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Page Content Holder -->
-        <div id="content">
-
-            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background: #421400">  -->
-                <nav class="navbar navbar-expand-lg" style="background: #421400"> 
-
-                <!-- <hi>bg-light</hi> -->
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="navbar-btn">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    <!-- search bar -->
-                    <div class='search'>
-                        <input class='search-input' type='text' name='' placeholder='Search...'>
-                        <a class='search-btn' href='#'><i class='fa fa-search'></i></a>
-                      </div>
-                    <!-- <p>yt4cbvrywbctu6wbcuyuywtc</p> -->
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <i class="fas fa-align-justify"></i>
-                    </button>
-                    
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color:#FFEAE1">
-                        <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">New Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page Link</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">New Page Link</a>
-                            </li>
-                            <button onclick="myFunction()" id="darkMode">Toggle dark mode</button>
-                        </ul>
+            <div class="tab">
+                <button class="tablinks"; style="color: white;">Platform Selection</button>
+            </div>
+            <form action="/loading" method="post" >
+                <div id="level" class="tabcontent">
+                    <div class = "form-group">
+                        <label style="color: white;">Link</label>
+                        <input type="text" name="link" class="form-control" autocomplete="off">
+                    </div>
+                    <div class = "form-group">
+                        <button type = "submit" value="Youtube" name="site" class="primary-button">Youtube</button>
+                        <button type = "submit" value="Threads" name="site" class="primary-button">Threads</button>
+                        <button type = "submit" value="Yelp" name="site" class="primary-button">Yelp</button>
                     </div>
                 </div>
-            </nav>
-            
+            </form>
         </div>
     </div>
+
+    <div class="content-section justify-center text-center pt-7">
+        <div class="space-y-5">
+            <h2 style="padding-top: 200px;" class="content-heading cd-headline slide">
+                <span class="cd-words-wrapper"><b class="is-visible">Unlock the Full potential<br>Explore our premium features and services</b></span>
+            </h2>
+            <h1 class="tracking-wide font-bold font-heading text-2xs uppercase flex items-center justify-center space-x-2">
+                <span>Get started today!</span>
+            </h1>
+        </div>
+    </div>
+
+    <section>
+        <div class='pricing pricing-palden'>
+          <div class='pricing-item'>
+            <div class='pricing-deco'>
+              <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+              </svg>
+              <div class='pricing-price'><span class='pricing-currency'>₹</span>345
+                <span class='pricing-period'>/ mo</span>
+              </div>
+              <h3 class='pricing-title'>Individual<br>For tracking a small brand
+              </h3>
+            </div>
+            <ul class='pricing-feature-list'>
+              <li class='pricing-feature'>2K mentions / mo</li>
+              <li class='pricing-feature'>Updated every 12h</li>
+              <li class='pricing-feature'>1 user</li>
+            </ul>
+            <button class='pricing-action'>Choose plan</button>
+          </div>
+          <div class='pricing-item pricing__item--featured'>
+            <div class='pricing-deco'>
+              <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+              </svg>
+              <div class='pricing-price'><span class='pricing-currency'>₹</span>900
+                <span class='pricing-period'>/ mo</span>
+              </div>
+              <h3 class='pricing-title'>Team<br>Ideal for mid-sized brands.</h3>
+            </div>
+            <ul class='pricing-feature-list'>
+              <li class='pricing-feature'>6K mentions / mo</li>
+              <li class='pricing-feature'>Updated every 6h</li>
+              <li class='pricing-feature'>Unlimited users</li>
+            </ul>
+            <button class='pricing-action'>Choose plan</button>
+          </div>
+          <div class='pricing-item'>
+            <div class='pricing-deco'>
+              <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
+                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A;	c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;	c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
+                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;	H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
+                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A;	c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
+              </svg>
+              <div class='pricing-price'><span class='pricing-currency'>₹</span>1999
+                <span class='pricing-period'>/ mo</span>
+              </div>
+              <h3 class='pricing-title'>Enterprise<br>Ideal for businesses and larger brands.</h3>
+            </div>
+            <ul class='pricing-feature-list'>
+              <li class='pricing-feature'>14K mentions / mo</li>
+              <li class='pricing-feature'>Updated every hour</li>
+              <li class='pricing-feature'>Unlimited users</li>
+            </ul>
+            <button class='pricing-action'>Choose plan</button>
+          </div>
+        </div>
+      </section>
+ 
+    <script>
+        function openCity(evt, cityName) 
+        {
+            var i, tabcontent, tablinks;
+        
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) 
+            {
+                tabcontent[i].style.display = "none";
+            }
+        
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) 
+            {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+        
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+
+    <footer class="bg-dark py-5 text-white">
+        <div class="container mx-auto text-center">
+            <p style="color: #ffffff;">&copy; 2023 Sentiment Sentinels. All rights reserved.</p>
+            <p style="color: #ffffff;">1234 Example Street, City, Country</p>
+            <p style="color: #ffffff;">Email: contact@yourcompany.com</p>
+    
+            <!-- Footer Sections -->
+            <div class="mt-5 flex flex-row justify-center">
+    
+                <!-- Contact Section -->
+                <div class="mx-4">
+                    <h4>Contact</h4>
+                    <p style="color: #ffffff;">
+                        For inquiries or assistance, please contact our support team.
+                        You can reach us via email or phone during business hours.
+                    </p>
+                </div>
+    
+                <!-- Resources Section -->
+                <div class="mx-4">
+                    <h4>Resources</h4>
+                    <p style="color: #ffffff;">
+                        Explore our resources section for helpful guides, articles,
+                        and tutorials to make the most of our products and services.
+                    </p>
+                </div>
+    
+                <!-- Clients Section -->
+                <div class="mx-4">
+                    <h4>Clients</h4>
+                    <p style="color: #ffffff;">
+                        We are proud to serve a diverse range of clients from various industries.
+                        Their success stories motivate us to continue delivering exceptional solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 crossorigin="anonymous"></script>
@@ -118,31 +213,5 @@ crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-    });
-</script>
-
-<script>
-    function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-    }
-    $(document).ready(function () {
-        $("#sidebar").mCustomScrollbar({
-            theme: "minimal"
-        });
-    });
-</script>
-
-
->
-
 </body>
 </html>
-
-<!-- <%- include("partials/footer.ejs"); -%> -->

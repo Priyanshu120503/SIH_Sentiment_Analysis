@@ -107,4 +107,5 @@ def clean(text):
 
 
 if __name__ == "__main__":
-    print(clean('lk;js slkj fhlj :) fdsoi jdjk'))
+    # print(clean('lk;js slkj fhlj :) fdsoi jdjk'))
+    nltk.download()

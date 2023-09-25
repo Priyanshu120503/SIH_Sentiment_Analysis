@@ -6,9 +6,9 @@
 }
 .navbar {
     /* background: gainsboro; */
-    background: #F88379;
+    background: rgb(77,24,0);
     padding-top: 15px;
-    padding-bottom: 15px;
+    padding-bottom: 25px;
     border: 0;
     border-radius: 0;
     margin-bottom: 0;
@@ -17,7 +17,7 @@
     
 }
 .navbar-nav  li a:hover {
-    color: #F88379 !important;
+    color: green !important;
 }
 
 .footer-padding {
@@ -33,7 +33,7 @@
   height:auto;
 	/* height: 40px; */
 	/* background-color: grey; */
-  background-color: #F88379;
+  /* background-color: #F88379; */
 }
 
 .footer p {
@@ -185,22 +185,6 @@ a, a:hover, a:focus {
     color: inherit;
     text-decoration: none;
     transition: all 0.3s;
-}
-
-.navbar {
-    padding: 15px 10px;
-    background: #fff;
-    border: none;
-    border-radius: 0;
-    margin-bottom: 40px;
-    /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); */
-    box-shadow: 1px 1px 3px #CFC4BE;
-}
-
-.navbar-btn {
-    box-shadow: none;
-    outline: none !important;
-    border: none;
 }
 
 .line {

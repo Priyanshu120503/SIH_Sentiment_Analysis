@@ -193,8 +193,14 @@ def make_word_cloud(text):
 
     wc = WordCloud(background_color=background_color, colormap=colormap, width=width, height=height).\
         generate(cleaned_text)
+    
+    # print(os.path.exists("../"))
+    # print(os.path.exists("../Website"))
+    # print(os.path.exists("../Website/public"))
 
-    wc.to_file("../Website/public/images/wordc.png")
+    # print(os.getcwd())
+
+    wc.to_file("./Website/public/images/wordc.png")
 
     # Uncomment to view image
     # plt.axis("off")
@@ -219,5 +225,6 @@ if __name__ == '__main__':
     # p_df = get_predictions('https://www.youtube.com/watch?v=NuEgjAMfdIY')
     # get_word_cloud(p_df)
     print(DEVELOPER_KEY_YT)
+    make_word_cloud("Donec sit amet auctor libero, a mattis tortor. Nulla commodo quam eu sem condimentum vulputate. Phasellus nec molestie orci. In sodales magna a dolor varius vehicula. Sed pretium felis vel lacus maximus pellentesque ac sed enim. Sed eu nunc eu nisl luctus venenatis varius sed purus. Integer rutrum consequat quam semper tempor. Vivamus quis euismod elit. Curabitur scelerisque efficitur volutpat. Curabitur finibus sem id blandit scelerisque. Nam lacinia rhoncus ante id tempor.Nulla id condimentum odio, a placerat ipsum. Duis id tristique risus. In ultrices leo pulvinar erat commodo sodales. Aenean feugiat feugiat eros a dictum. Cras posuere ipsum dui, vitae egestas ex varius eget. Nulla semper semper lectus vel consectetur. Cras lacinia mauris dolor, eu dictum nibh ornare nec. Sed id leo gravida, aliquam nunc vitae, rhoncus justo. Maecenas lacinia consectetur purus lacinia placerat. Cras at nisi ex. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed dolor felis, pretium id mattis a, elementum sit amet justo.")
     # https://www.threads.net/@mrbeast/post/CuXrpemRV3m
 

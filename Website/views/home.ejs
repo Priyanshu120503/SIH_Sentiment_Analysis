@@ -49,7 +49,7 @@
     
 <!-- laptop browser -->
     <div class="space-x-2 items-center hidden lg:flex flex-none">
-        <a href="login" class="secondary-button">Login</a>
+
         <a href="login" class="primary-button-sm">Sign up for free</a>
     </div>
 </header>
@@ -62,47 +62,8 @@
         <h2 class="content-heading cd-headline slide">
             <span class="cd-words-wrapper"><b class="is-visible">Know what people <br>say about your brand.</b><b>Analyze your<br>market.</b><b>Get all reviews  <br>at one place</b></span>
         </h2>
-        <button class="primary-button" onclick="openCity(event, 'level')">Select your Platform</button>
-    </div>
-
-    <div class="tab">
-        <button class="tablinks"; style="color: white;" onclick="openCity(event, 'level')">Platform Selection</button>
-    </div>
-    
-    <form action="/loading" method="post" >
-        <div id="level" class="tabcontent">
-            <div class = "form-group">
-                <label style="color: white;">Link</label>
-                <input type="text" name="link" class="form-control" autocomplete="off">
-            </div>
-            <div class = "form-group">
-                <button type = "submit" value="Youtube" name="site" class="btn btn-primary">Youtube</button>
-                <button type = "submit" value="Threads" name="site" class="btn btn-primary">Threads</button>
-                <button type = "submit" value="Yelp" name="site" class="btn btn-primary">Yelp</button>
-            </div>
-        </div>
-    </form>
-    <script>
-        function openCity(evt, cityName) 
-        {
-            var i, tabcontent, tablinks;
-        
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) 
-            {
-                tabcontent[i].style.display = "none";
-            }
-        
-            tablinks = document.getElementsByClassName("tablinks");
-            for (i = 0; i < tablinks.length; i++) 
-            {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-        
-            document.getElementById(cityName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
+        <a href="login" class="primary-button">LOG IN</a>
+    </div> 
 </div>
 
 <div class="content-section content-columns pb-20 pt-20 lg:pb-52 lg:pt-28">
@@ -292,79 +253,6 @@
     <div class="w-full md:max-w-[50%] relative" data-sal-duration="500" data-sal="slide-left">
         <img src="fonts/SSrightToleft.svg" alt="Dots" width="124" height="124" loading="lazy" class="absolute bottom-44 -left-14 scale-[0.6] lg:scale-100">
         <img src="fonts/SSvisualize.svg" alt="pic" class="w-full relative" loading="lazy" width="640" height="720">
-    </div>
-</div>
-
-<div class="bg-dark w-full mb-20 md:mb-28 py-16 lg:py-28">
-    <div class="flex flex-col space-y-12 content-section text-center items-center">
-        <h2 class="content-heading text-white !text-2xl md:!text-3xl-condensed" data-sal-duration="500" data-sal="slide-up">
-            Monitor the entire internet at once
-        </h2>
-        <div class="max-w-2xl grid gap-14 grid-cols-3 grid-rows-5 sm:grid-cols-5 sm:grid-rows-3 items-end px-4" data-sal-duration="500" data-sal="zoom-in">
-            <div class="source">
-                <img src="fonts/twitter.svg" alt="Twitter" loading="lazy" width="24" height="19">
-                <p>Twitter</p>
-            </div>
-            <div class="source">
-                <img src="fonts/fb.svg" alt="Facebook" loading="lazy" width="24" height="24">
-                <p>Facebook</p>
-            </div>
-            <div class="source">
-                <img src="fonts/insta.svg" alt="Instagram" loading="lazy" width="24" height="23">
-                <p>Instagram</p>
-            </div>
-            <div class="source">
-                <img src="fonts/youtube.svg" alt="Youtube" loading="lazy" width="24" height="24">
-                <p>Youtube</p>
-            </div>
-            <div class="source">
-                <img src="fonts/spotify.svg" alt="Spotify" loading="lazy" width="24" height="23">
-                <p>Spotify</p>
-            </div>
-            <div class="source">
-                <img src="fonts/newspaper.svg" alt="News" loading="lazy" width="24" height="23">
-                <p>News</p>
-            </div>
-            <div class="source">
-                <img src="fonts/linkedin.svg" alt="Linkedin" loading="lazy" width="24" height="23">
-                <p>Linkedin</p>
-            </div>
-            <div class="source">
-                <img src="fonts/bicon.svg" alt="Blogs" loading="lazy" width="24" height="26">
-                <p>Blogs</p>
-            </div>
-            <div class="source">
-                <img src="fonts/forums.svg" alt="Forums" loading="lazy" width="24" height="23">
-                <p>Forums</p>
-            </div>
-            <div class="source">
-                <img src="fonts/reviews.svg" alt="Reviews" loading="lazy" width="24" height="23">
-                <p>Reviews</p>
-            </div>
-            <div class="source">
-                <img src="fonts/reddit.svg" alt="Reddit" loading="lazy" width="24" height="23">
-                <p>Reddit</p>
-            </div>
-            <div class="source">
-                <img src="fonts/telegram.svg" alt="Telegram" loading="lazy" width="24" height="23">
-                <p>Telegram</p>
-            </div>
-            <div class="source">
-                <img src="fonts/tripadvisor.svg" alt="TripAdvisor" loading="lazy" width="24" height="22">
-                <p>TripAdvisor</p>
-            </div>
-            <div class="source">
-                <img src="fonts/appstore.svg" alt="AppStore" loading="lazy" width="24" height="23">
-                <p>AppStore</p>
-            </div>
-            <div class="source">
-                <img src="fonts/tiktok.svg" alt="TikTok" loading="lazy" width="24" height="27">
-                <p>TikTok</p>
-            </div>
-        </div>
-        <div class="text-lighter text-xs-relaxed font-medium">
-            &amp; many more
-        </div>
     </div>
 </div>
 
