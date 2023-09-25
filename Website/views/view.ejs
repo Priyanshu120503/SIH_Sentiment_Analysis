@@ -79,20 +79,22 @@
               <img src="/images/wordc.png" width="900"/>
        </div>
        
-       <div class="my-3 mx-auto text-center">
+       <div class="my-3 mx-auto text-center d-flex flex-column align-items-center">
               <p class="display-5">Comment-wise classification</p>
-              <table class="table comment-wise-classification w-50 mb-0 mx-auto">
-                     <thead>
-                       <tr>
-                         <th scope="col">#</th>
-                         <th scope="col">Comment</th>
-                         <th scope="col">Like Count</th>
-                         <th scope="col">Sentiment</th>
-                       </tr>
-                     </thead>
-                     <tbody>
-                     </tbody>
-              </table>
+              <div style="max-height: 60vh; overflow-y: scroll;" class="w-50">
+                     <table class="table comment-wise-classification mb-0 mx-auto">
+                            <thead>
+                              <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Comment</th>
+                                <th scope="col">Like Count</th>
+                                <th scope="col">Sentiment</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                     </table>
+              </div>
               <button class="w-25 btn btn-primary my-0 py-0 view-more-btn">View More</button>
        </div>
 </div>
