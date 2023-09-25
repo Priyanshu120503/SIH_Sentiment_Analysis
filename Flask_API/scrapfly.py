@@ -153,7 +153,7 @@ def get_rating(row):
 def get_predictions(link) -> pd.DataFrame:
     data = []
     if re.match(r"https://www.youtube.com*", link):
-        resp = get_youtube_comments(link, 500)
+        resp = get_youtube_comments(link, 100)
         for i in resp['items']:
             temp = i['snippet']['topLevelComment']['snippet']
             data.append({
