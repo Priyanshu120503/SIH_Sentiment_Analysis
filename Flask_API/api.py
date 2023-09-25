@@ -13,8 +13,17 @@ def analysis_data(link):
     data = {
         'positive': len(df[df.rating > 3]),
         'neutral': len(df[df.rating == 3]),
-        'negative': len(df[df.rating < 3])
+        'negative': len(df[df.rating < 3]),
+        'comment_sentiments': []
     }
+
+    for i, row in df.iterrows():
+        data['comment_sentiments'].append({
+            'comment': row['Comment'],
+            'like_count': row['likeCount'],
+            'sentiment': 1 if row['rating'] > 3 else (0 if row['rating'] == 3 else -1)
+        })
+
     return jsonify(data)
 
 
